@@ -12,7 +12,8 @@
     "typecheck": "tsc --noEmit",
     "build": "swc src --strip-leading-paths --out-dir dist",
     "start": "node dist/server.js",
-    "prod": "yarn migration:deploy && yarn build && yarn start"
+    "prod": "yarn migration:deploy && yarn build && yarn start",
+    "seed": "cross-env DATABASE_HOST=localhost ts-node --transpile-only prisma/seed.ts"
   },
   "dependencies": {
     "@prisma/client": "5.22.0",
